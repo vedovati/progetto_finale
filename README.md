@@ -49,3 +49,7 @@ Nella terza vista si ha l’elenco completo dei medicinali presenti nel database
 - il sistema riconosce la scatola e mostra all’utente la scheda descrittiva
 - l’utente può leggere la scheda o ascoltarla
 - l’utente chiude la scheda e può inquadrare un altro medicinale
+
+## Database
+Medicinale (id, nome, descrizione, foglietto_illustrativo, img_path):
+Questa tabella contiene tutti i dati necessari all'applicazione per poter funzionare
