@@ -51,5 +51,5 @@ Nella terza vista si ha l’elenco completo dei medicinali presenti nel database
 - l’utente chiude la scheda e può inquadrare un altro medicinale
 
 ## Database
-Medicinale (id, nome, descrizione, foglietto_illustrativo, img_path):
+**Medicinale** (id, nome, descrizione, foglietto_illustrativo, img_path):
 Questa tabella contiene tutti i dati necessari all'applicazione per poter funzionare
