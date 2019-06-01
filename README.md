@@ -30,13 +30,14 @@ Il progetto consiste nella creazione di un'applicazione Android per aiutare le p
     <td>visualizza scheda medicinale</td>
   </tr>
 </table>
+
 Nella prima vista l’utente ha la possibilità di inquadrare un medicinale tramite la camera e schiacciare il pulsante centrale rosso per entrare nella scheda specifica o, tramite il pulsante verde in basso a destra, entrare nell’elenco di tutti i medicinali.
 
 Nella seconda vista si ha possibilità di leggere o ascoltare la scheda del medicinale scelto composta da: nome, immagine, descrizione abbastanza sintetica ed riassunto del foglietto illustrativo sempre del medicinale.
 
 Nella terza vista si ha l’elenco completo dei medicinali presenti nel database e, anche in questo caso, si ha la possibilità di ascoltare tutta la lista tramite apposito pulsante.
 
-# requisiti
+# Requisiti
 - L’applicazione deve essere interamente navigabile anche alle persone con disabilità visive tramite audio
 - Inquadrato un medicinale l'applicazione dovrà aprire la scheda del medicinale stesso
 - Deve essere possibile navigare un elenco delle schede di tutti i medicinali
