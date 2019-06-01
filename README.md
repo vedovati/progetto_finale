@@ -1,6 +1,5 @@
 # Titolo
 Progetto fine anno degli studenti Rota Nicola e Vedovati Matteo
---titolo e logo ancora da pensare--
 
 # Introduzione generale
 Il progetto consiste nella creazione di un'applicazione Android per aiutare le persone anziane o in generale le persone che hanno una certa difficoltà visiva a non confondere le proprie medicine. A tale riguardo, quando verrà inquadrato un medicinale, con l’aiuto dell AI, l'applicazione saprà riconoscere il medicinale in questione e presenterà all’utente una scheda descrittiva di quest’ultimo. L’applicazione si presenta quindi anche come un supporto dove consultare foglietti illustrativi e descrizione di codeste medicine in caso di necessità. In tutta l'applicazione sarà comunque sempre possibile ascoltare tutto ciò che si è incapacitati a leggere.
