@@ -33,7 +33,7 @@ Il progetto consiste nella creazione di un'applicazione Android per aiutare le p
 
 Nella prima vista l’utente ha la possibilità di inquadrare un medicinale tramite la camera e schiacciare il pulsante centrale rosso per entrare nella scheda specifica o, tramite il pulsante verde in basso a destra, entrare nell’elenco di tutti i medicinali.
 
-Nella seconda vista si ha possibilità di leggere o ascoltare la scheda del medicinale scelto composta da: nome, immagine, descrizione abbastanza sintetica ed riassunto del foglietto illustrativo sempre del medicinale.
+Nella seconda vista si ha possibilità di leggere o ascoltare la scheda del medicinale scelto composta da: nome, immagine, descrizione abbastanza sintetica e riassunto del foglietto illustrativo.
 
 Nella terza vista si ha l’elenco completo dei medicinali presenti nel database e, anche in questo caso, si ha la possibilità di ascoltare tutta la lista tramite apposito pulsante.
 
