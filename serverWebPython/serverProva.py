@@ -22,7 +22,9 @@ class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
 
         # l'applicazione dovrebbe passare in POST un immagine compressa e codificata in base64
 
-        # modifica dell'immagine per consentire al modello di processarla
+        # modifica dell'immagine per consentire al modello di processarla in modo corretto (identificare e ritagliare la scatola)
+        
+        #richiamare il knn per identificare il tipo di medicinale
 
         # logica della funzione in cui il modello dovrebbe processare i dati e restituire un valore
 
