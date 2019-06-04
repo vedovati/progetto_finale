@@ -2,6 +2,7 @@ package com.example.vedo.applicazioneclient;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ import java.util.Map;
 public class MedicinaleActivity extends AppCompatActivity {
 
     TextView nome, descrizione, fogliettoIllustrativo;
+    ImageView img;
     String nomeMedicina;
 
     @Override
@@ -38,6 +40,7 @@ public class MedicinaleActivity extends AppCompatActivity {
         nome = (TextView) findViewById(R.id.nome);
         descrizione = (TextView) findViewById(R.id.descrizione);
         fogliettoIllustrativo = (TextView) findViewById(R.id.foglietto_illustrativo);
+        img = (ImageView) findViewById(R.id.img);
 
         getMedicinale();
 

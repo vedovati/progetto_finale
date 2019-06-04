@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -87,7 +88,7 @@ public class AdapterMedicinale extends RecyclerView.Adapter<AdapterMedicinale.Vi
     public class ViewHolder extends RecyclerView.ViewHolder { // classe che collega card_view
 
         TextView nome;
-        LinearLayout card;
+        RelativeLayout card;
 
         public ViewHolder(View itemView) {
             super(itemView);
