@@ -1,7 +1,11 @@
 package com.example.vedo.applicazioneclient;
 
+import android.graphics.drawable.BitmapDrawable;
+import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,13 +24,17 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class MedicinaleActivity extends AppCompatActivity {
 
     TextView nome, descrizione, fogliettoIllustrativo;
     ImageView img;
+    ImageView audioNome, audioDescrizione, audioFoglietto;
     String nomeMedicina;
+
+    TextToSpeech mTTS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +45,54 @@ public class MedicinaleActivity extends AppCompatActivity {
         //Extract the data…
         nomeMedicina = bundle.getString("nomeMedicina");
 
+        // ottenere viste
         nome = (TextView) findViewById(R.id.nome);
         descrizione = (TextView) findViewById(R.id.descrizione);
         fogliettoIllustrativo = (TextView) findViewById(R.id.foglietto_illustrativo);
         img = (ImageView) findViewById(R.id.img);
+
+        audioNome = (ImageView) findViewById(R.id.audioNome);
+        audioDescrizione = (ImageView) findViewById(R.id.audioDescrizione);
+        audioFoglietto = (ImageView) findViewById(R.id.audioFoglietto);
+
+        mTTS = new TextToSpeech(MedicinaleActivity.this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS) {
+                    int result = mTTS.setLanguage(Locale.ITALIAN);
+
+                    if (result == TextToSpeech.LANG_MISSING_DATA
+                            || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                        Log.e("TTS", "Language not supported");
+                    } else {
+                        audioNome.setEnabled(true);
+                    }
+                } else {
+                    Log.e("TTS", "Initialization failed");
+                }
+            }
+        });
+
+        audioNome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mTTS.speak(nome.getText().toString(), TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
+
+        audioDescrizione.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mTTS.speak(descrizione.getText().toString(), TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
+
+        audioFoglietto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mTTS.speak(fogliettoIllustrativo.getText().toString(), TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
 
         getMedicinale();
 
@@ -61,6 +113,7 @@ public class MedicinaleActivity extends AppCompatActivity {
                             nome.setText(medicinale.getJSONObject(0).get("nome").toString());
                             descrizione.setText(medicinale.getJSONObject(0).get("descrizione").toString());
                             fogliettoIllustrativo.setText(medicinale.getJSONObject(0).get("foglietto_illustrativo").toString());
+                            img.setImageResource(Api.getResId(medicinale.getJSONObject(0).get("img_path").toString(), R.drawable.class));
 
                         } catch (JSONException e) {
                             e.printStackTrace();
