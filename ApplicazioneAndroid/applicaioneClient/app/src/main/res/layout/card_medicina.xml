@@ -5,12 +5,15 @@
     android:layout_height="70dp"
     android:orientation="horizontal"
     android:background="@drawable/card_back"
-    android:layout_margin="10dp">
+    android:layout_marginTop="2dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp">
         <TextView
             android:id="@+id/nome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tachipirina"
+            android:textStyle="bold"
             android:textSize="20dp"
             android:layout_marginLeft="20dp"
             android:textColor="@color/colorText"
@@ -18,8 +21,8 @@
 
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/btnAudio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/audio_button"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"

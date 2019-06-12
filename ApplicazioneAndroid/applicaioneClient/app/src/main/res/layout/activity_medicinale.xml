@@ -6,13 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".MedicinaleActivity">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <TextView
                 android:id="@+id/nome"
@@ -21,19 +36,20 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:text="TextView"
+                android:textColor="@color/colorText"
                 android:textSize="34dp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:textColor="@color/colorText"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/audioNome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/nome"
-                app:srcCompat="@drawable/audio_button"/>
+                app:srcCompat="@drawable/audio_button" />
 
             <FrameLayout
                 android:id="@+id/frameLayout"
@@ -64,16 +80,16 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Descrizione"
+                android:textColor="@color/colorText"
                 android:textSize="30dp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-                android:textColor="@color/colorText"/>
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
             <ImageView
                 android:id="@+id/audioDescrizione"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintBottom_toTopOf="@+id/descrizione"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -87,11 +103,11 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
+                android:textColor="@color/colorText"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titoloDescrizione"
-                android:textColor="@color/colorText"/>
+                app:layout_constraintTop_toBottomOf="@+id/titoloDescrizione" />
 
             <TextView
                 android:id="@+id/titoloFoglietto"
@@ -100,16 +116,16 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="24dp"
                 android:text="Foglietto Illustrativo"
+                android:textColor="@color/colorText"
                 android:textSize="30dp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/descrizione"
-                android:textColor="@color/colorText"/>
+                app:layout_constraintTop_toBottomOf="@+id/descrizione" />
 
             <ImageView
                 android:id="@+id/audioFoglietto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintBottom_toTopOf="@+id/foglietto_illustrativo"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -124,11 +140,11 @@
                 android:layout_marginTop="8dp"
                 android:paddingBottom="20dp"
                 android:text="TextView"
+                android:textColor="@color/colorText"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titoloFoglietto"
-                android:textColor="@color/colorText"/>
+                app:layout_constraintTop_toBottomOf="@+id/titoloFoglietto" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
