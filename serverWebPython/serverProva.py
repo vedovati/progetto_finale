@@ -48,7 +48,7 @@ def run():
 
     # Server settings
     # indirizzo ip = 127.0.0.1 (locale), porta = 8081
-    server_address = ('127.0.0.1', 8081)
+    server_address = ('192.168.1.108', 8081)
     httpd = HTTPServer(server_address, testHTTPServer_RequestHandler)
     print('running server...')
     httpd.serve_forever()
