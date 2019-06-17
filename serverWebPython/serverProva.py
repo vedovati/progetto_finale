@@ -4,6 +4,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from pprint import pprint
 from os import curdir, sep
 import cgi
+import base64
 
 # HTTPRequestHandler class
 
@@ -21,6 +22,11 @@ class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
         )
 
         # l'applicazione dovrebbe passare in POST un immagine compressa e codificata in base64
+        photoEnc = form['photo'].value
+        
+        fh = open("imageToSave.png", "wb")
+        fh.write(base64.b64decode(photoEnc))
+        fh.close()
 
         # modifica dell'immagine per consentire al modello di processarla in modo corretto (identificare e ritagliare la scatola)
         
@@ -32,7 +38,7 @@ class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         pprint(form)
         # funzione per scrivere il risulatao da restituire
-        self.wfile.write(form['prova'].value.encode('utf-8'))
+        self.wfile.write("wella".encode('utf-8'))
         return
 
 

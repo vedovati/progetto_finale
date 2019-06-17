@@ -53,7 +53,12 @@ public class CameraActivity extends AppCompatActivity {
         btnCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                cameraKitView.captureImage(new CameraKitView.ImageCallback() {
+                    @Override
+                    public void onImage(CameraKitView cameraKitView, final byte[] photo) {
+                        sendPhoto(photo);
+                    }
+                });
             }
         });
 
@@ -61,7 +66,7 @@ public class CameraActivity extends AppCompatActivity {
 
     private void sendPhoto(final byte[] photo) {
 
-        StringRequest stringRequest = new StringRequest (Request.Method.POST, Api.API_URL, // TODO cambiare ip/url server python
+        StringRequest stringRequest = new StringRequest (Request.Method.POST, "http://192.168.1.108:8081", // TODO cambiare ip/url server python
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) { // ritorno dati
