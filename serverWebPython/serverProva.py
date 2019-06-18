@@ -54,7 +54,7 @@ PATH = "./img"
 def match(img):
 
     maxMatch = MIN_MATCH_COUNT
-    medName = "nessun medicinale rilevato"
+    medName = "0"
     dirs = os.listdir(PATH)
     img1 = readImg(img)
     des1=detector(img1)
