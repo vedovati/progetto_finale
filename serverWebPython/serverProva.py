@@ -108,11 +108,7 @@ def run():
 
     # Server settings
     # indirizzo ip = 127.0.0.1 (locale), porta = 8081
-<<<<<<< HEAD
     server_address = ('192.168.1.108', 8081)
-=======
-    server_address = ('192.168.1.175', 8081)
->>>>>>> 345a92a109016d06e46e0f19af3b099126f63b36
     httpd = HTTPServer(server_address, testHTTPServer_RequestHandler)
     print('running server...')
     httpd.serve_forever()

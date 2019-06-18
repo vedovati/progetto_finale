@@ -77,7 +77,9 @@ public class CameraActivity extends AppCompatActivity {
 
                             String nome = medicinali.getJSONObject(0).get("nome").toString();
 
-                            if (nome != "") {
+                            if (nome == "0") {
+                                Toast.makeText(CameraActivity.this, "Medicinale non rilevato", Toast.LENGTH_SHORT);
+                            } else if (nome != "") {
                                 Intent intent = new Intent(CameraActivity.this, MedicinaleActivity.class);
 
                                 //Create the bundle
