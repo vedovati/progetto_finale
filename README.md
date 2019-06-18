@@ -1,4 +1,4 @@
-# Titolo
+# Zoomed
 Progetto fine anno degli studenti Rota Nicola e Vedovati Matteo
 
 # Introduzione generale
