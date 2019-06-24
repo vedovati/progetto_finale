@@ -2,6 +2,7 @@
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pprint import pprint
+import os
 from os import curdir, sep
 import cgi
 import base64
@@ -22,28 +23,38 @@ class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
                 'CONTENT_TYPE': self.headers['Content-Type'],
             }
         )
+        print("responding to client...")
+        if form['photo'].value == "prova":
+            print("ciao")
+            import time
+            time.sleep(5)
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(str(time.time()).encode('utf-8'))
+        else:
+            # l'applicazione dovrebbe passare in POST un immagine compressa e codificata in base64
+            photoEnc = form['photo'].value
 
-        # l'applicazione dovrebbe passare in POST un immagine compressa e codificata in base64
-        photoEnc = form['photo'].value
+            fh = open("imageToMatch.jpg", "wb")
+            fh.write(base64.b64decode(photoEnc))
+            fh.close()
 
-        fh = open("imageToMatch.jpg", "wb")
-        fh.write(base64.b64decode(photoEnc))
-        fh.close()
+            # modifica dell'immagine per consentire al modello di processarla in modo corretto (identificare e ritagliare la scatola)
+            
+            #funzione che identifica il medicinale
+            medName = {"name":match("imageToMatch.jpg")}
 
-        # modifica dell'immagine per consentire al modello di processarla in modo corretto (identificare e ritagliare la scatola)
+            # logica della funzione in cui il modello dovrebbe processare i dati e restituire un valore
+
+            self.send_response(200)
+            self.end_headers()
+            pprint(form)
+            # funzione per scrivere il risulatao da restituire
+            response=json.dumps(medName)
+
+            self.wfile.write(response.encode('utf-8'))
         
-        #funzione che identifica il medicinale
-        medName = {"name":match("imageToMatch.jpg")}
-
-        # logica della funzione in cui il modello dovrebbe processare i dati e restituire un valore
-
-        self.send_response(200)
-        self.end_headers()
-        pprint(form)
-        # funzione per scrivere il risulatao da restituire
-        response=json.dump(medName)
-
-        self.wfile.write(response.encode('utf-8'))
+        print("response sended...")
         return
 
 # Inizializzazione del rilevatore SIFT
@@ -107,8 +118,7 @@ def run():
     print('starting server...')
 
     # Server settings
-    # indirizzo ip = 127.0.0.1 (locale), porta = 8081
-    server_address = ('192.168.1.108', 8081)
+    server_address = ('10.10.21.29', 8081)
     httpd = HTTPServer(server_address, testHTTPServer_RequestHandler)
     print('running server...')
     httpd.serve_forever()
