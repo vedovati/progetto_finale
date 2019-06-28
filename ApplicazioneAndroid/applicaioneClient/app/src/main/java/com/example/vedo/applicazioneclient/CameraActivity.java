@@ -75,12 +75,13 @@ public class CameraActivity extends AppCompatActivity {
                             jsonObject = new JSONObject(response);
                             JSONArray medicinali = jsonObject.getJSONArray("dati");
 
-                            String nome = medicinali.getJSONObject(0).get("nome").toString();
+                            String nome = medicinali.getJSONObject(0).get("name").toString();
 
                             if (nome == "0") {
                                 Toast.makeText(CameraActivity.this, "Medicinale non rilevato", Toast.LENGTH_SHORT);
                             } else if (nome != "") {
-                                Intent intent = new Intent(CameraActivity.this, MedicinaleActivity.class);
+                                Toast.makeText(CameraActivity.this, "Med: " + nome, Toast.LENGTH_SHORT);
+                                /*Intent intent = new Intent(CameraActivity.this, MedicinaleActivity.class);
 
                                 //Create the bundle
                                 Bundle bundle = new Bundle();
@@ -91,7 +92,7 @@ public class CameraActivity extends AppCompatActivity {
                                 //Add the bundle to the intent
                                 intent.putExtras(bundle);
 
-                                startActivity(intent);
+                                startActivity(intent);*/
                             } else {
                                 Toast.makeText(CameraActivity.this, "nessun medicnale identificato", Toast.LENGTH_SHORT).show();
                             }

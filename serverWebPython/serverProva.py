@@ -3,6 +3,7 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pprint import pprint
 from os import curdir, sep
+import os
 import cgi
 import base64
 import cv2
@@ -41,7 +42,7 @@ class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         pprint(form)
         # funzione per scrivere il risulatao da restituire
-        response=json.dump(medName)
+        response=json.dumps(medName)
 
         self.wfile.write(response.encode('utf-8'))
         return
