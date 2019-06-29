@@ -66,7 +66,7 @@ public class CameraActivity extends AppCompatActivity {
 
     private void sendPhoto(final byte[] photo) {
 
-        StringRequest stringRequest = new StringRequest (Request.Method.POST, "http://192.168.1.108:8081", // TODO cambiare ip/url server python
+        StringRequest stringRequest = new StringRequest (Request.Method.POST, Api.AI_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) { // ritorno dati
@@ -80,8 +80,7 @@ public class CameraActivity extends AppCompatActivity {
                             if (nome == "0") {
                                 Toast.makeText(CameraActivity.this, "Medicinale non rilevato", Toast.LENGTH_SHORT);
                             } else if (nome != "") {
-                                Toast.makeText(CameraActivity.this, "Med: " + nome, Toast.LENGTH_SHORT);
-                                /*Intent intent = new Intent(CameraActivity.this, MedicinaleActivity.class);
+                                Intent intent = new Intent(CameraActivity.this, MedicinaleActivity.class);
 
                                 //Create the bundle
                                 Bundle bundle = new Bundle();
@@ -92,7 +91,7 @@ public class CameraActivity extends AppCompatActivity {
                                 //Add the bundle to the intent
                                 intent.putExtras(bundle);
 
-                                startActivity(intent);*/
+                                startActivity(intent);
                             } else {
                                 Toast.makeText(CameraActivity.this, "nessun medicnale identificato", Toast.LENGTH_SHORT).show();
                             }
