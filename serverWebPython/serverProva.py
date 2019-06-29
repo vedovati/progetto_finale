@@ -4,7 +4,6 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from pprint import pprint
 import os
 from os import curdir, sep
-import os
 import cgi
 import base64
 import cv2
@@ -55,22 +54,7 @@ class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
 
             self.wfile.write(response.encode('utf-8'))
         
-<<<<<<< HEAD
-        #funzione che identifica il medicinale
-        medName = {"name":match("imageToMatch.jpg")}
-
-        # logica della funzione in cui il modello dovrebbe processare i dati e restituire un valore
-
-        self.send_response(200)
-        self.end_headers()
-        pprint(form)
-        # funzione per scrivere il risulatao da restituire
-        response=json.dumps(medName)
-
-        self.wfile.write(response.encode('utf-8'))
-=======
         print("response sended...")
->>>>>>> dd91000c2fa0264e8e421d9c5c5bcf3b998c05c8
         return
 
 # Inizializzazione del rilevatore SIFT
